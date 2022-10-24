@@ -68,9 +68,19 @@ else{
     
     #kalau pemilik bot
     else{
+
+        if($text == '/help' or $text == '/admin'){
+            kirim_teks("Daftar perintah untuk admin:
+    /tambah - untuk menambah soal
+    /ceksoal
+    /edit [no soal]
+    /hapus [no soal]
+    /clear - bersihkan arsip jawaban
+    [script php] - eksekusi php");
+          }
         
         #skrip PHP
-        if(preg_match('/^\<\?php/',$text)){
+        elseif(preg_match('/^\<\?php/',$text)){
             
             # bikin file PHP
             $fn = $chat_id.time().'.php';
